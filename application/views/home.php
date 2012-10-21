@@ -27,7 +27,12 @@
 </head>
 <body>
 	
-	<h4>hello geo-grams world</h4>
+	<?php foreach ($images as $image): ?>
+		<?php echo html::anchor($image->link,
+			html::image($image->images->low_resolution->url, 
+			array("width" => $image->images->low_resolution->width, "height "=> $image->images->low_resolution->height)),
+		array('target' => '_blank')) ?>
+	<?php endforeach ?>
 	
 </body>
 </html>
